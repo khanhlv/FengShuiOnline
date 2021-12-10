@@ -49,3 +49,38 @@ function find() {
 		}
 	}
 }
+
+function findMoto() {
+	var dataList = [{"id":"01","name":"Thiên địa thái bình"},{"id":"41","name":"Đức vọng cao thượng"},{"id":"02","name":"Không phân định"},{"id":"42","name":"Sự nghiệp bất thành"},{"id":"03","name":"Tấn tới như ý"},{"id":"43","name":"Hoa trong mưa đêm"},{"id":"04","name":"Bị bệnh"},{"id":"44","name":"Buồn tủi, khổ đau"},{"id":"05","name":"Trường thọ"},{"id":"45","name":"Vận tốt"},{"id":"06","name":"Cuộc sống an nhàn, dư dả"},{"id":"46","name":"Gặp nhiều chuyển biến"},{"id":"07","name":"Cương nghị, quyết đoán"},{"id":"47","name":"Khai hoa nở nhụy"},{"id":"08","name":"Ý chí kiên cường"},{"id":"48","name":"Lập chí"},{"id":"09","name":"Lúc lên voi khi xuống chó"},{"id":"49","name":"Nhiều điều xấu"},{"id":"10","name":"Vạn sự kết thúc"},{"id":"50","name":"Một thành một bại"},{"id":"11","name":"Gia vận tốt lành"},{"id":"51","name":"Thịnh yếu xen kẽ"},{"id":"12","name":"Ý chí mềm yếu"},{"id":"52","name":"Biết trước được việc"},{"id":"13","name":"Tài chí hơn người"},{"id":"53","name":"Nội tâm ưu sầu"},{"id":"14","name":"Nước mắt khổ đau"},{"id":"54","name":"May rủi song hành"},{"id":"15","name":"Đạt được phước thọ"},{"id":"55","name":"Ngoài tốt trong khổ"},{"id":"16","name":"Quý nhân hỗ trợ"},{"id":"56","name":"Thảm thương"},{"id":"17","name":"Vượt qua mọi khó khăn"},{"id":"57","name":"Cây thông trong vườn tuyết"},{"id":"18","name":"Có chí thì nên"},{"id":"58","name":"Khổ trước sướng sau"},{"id":"19","name":"Đoàn tụ ông bà"},{"id":"59","name":"Mất phương hướng"},{"id":"20","name":"Sự nghiệp thất bại"},{"id":"60","name":"Tối tăm không ánh sáng"},{"id":"21","name":"Thời vận lên xuống, thăng trầm"},{"id":"61","name":"Danh lợi đầy đủ"},{"id":"22","name":"Tiền vào như nước,tiền ra như giọt sương mai"},{"id":"62","name":"Căn bản yếu kém"},{"id":"23","name":"Mặt trời mọc"},{"id":"63","name":"Đạt được vinh hoa phú quý"},{"id":"24","name":"Tài lộc đầy nhà"},{"id":"64","name":"Cốt nhục chia cắt"},{"id":"25","name":"Thông minh, nhạy bén"},{"id":"65","name":"Phú quý trường thọ"},{"id":"26","name":"Biến hóa kỳ dị"},{"id":"66","name":"Trong ngoài không hòa nhã"},{"id":"27","name":"Dục vọng vô tận"},{"id":"67","name":"Đường danh lợi thông suốt"},{"id":"28","name":"Tâm lý bất an"},{"id":"68","name":"Lập nghiệp thương gia"},{"id":"29","name":"Dục vọng lớn nhưng khó thành"},{"id":"69","name":"Đứng ngồi không yên"},{"id":"30","name":"Chết đi sống lại"},{"id":"70","name":"Diệt vong thế hệ"},{"id":"31","name":"Tài dũng được chí"},{"id":"71","name":"Tinh thần khó chịu"},{"id":"32","name":"Cầu được uớc thấy"},{"id":"72","name":"Suối vàng chờ đợi"},{"id":"33","name":"Gia môn hưng thịnh"},{"id":"73","name":"Ý chí cao mà sức yếu"},{"id":"34","name":"Gia đình tan vỡ"},{"id":"74","name":"Hoàn cảnh gặp bất trắc"},{"id":"35","name":"Bình an ôn hòa"},{"id":"75","name":"Thủ được binh an"},{"id":"36","name":"Phong ba không ngừng"},{"id":"76","name":"Vĩnh biệt ngàn thu"},{"id":"37","name":"Hiển đạt uy quyền"},{"id":"77","name":"Vui sướng cực đỉnh"},{"id":"38","name":"Ý chí mềm yếu, thụ động"},{"id":"78","name":"Gia đình buồn tủi"},{"id":"39","name":"Vinh hoa phú quý"},{"id":"79","name":"Hồi sức"},{"id":"40","name":"Cẩn thận được an"},{"id":"80","name":"Gặp nhiều xui xẻo"}];
+	
+	var inputVal = document.getElementById('inputVal').value;
+
+	if (!inputVal || inputVal.length < 4) {
+		alert('Vui lòng nhập nhập biển số xe hoặc lớn hơn 4');
+		
+		document.getElementById('phoneNumber').innerHTML = '';
+		document.getElementById('numberCalc').innerHTML = '';
+		document.getElementById('resultName').innerHTML = '';
+		return;
+	}
+	
+	var input = parseFloat(inputVal) / 80;
+
+	var str = input.toString();
+
+	if (str.indexOf(".") > 0) {
+		str = "0" + str.substring(str.indexOf("."));
+	}
+
+	var output = parseFloat(str) * 80;
+	
+	for (var i = 0, leng = dataList.length; i < leng; i++) {
+		if (dataList[i].id == output) {
+			document.getElementById('phoneNumber').innerHTML = inputVal;
+			document.getElementById('numberCalc').innerHTML = dataList[i].id;
+			document.getElementById('resultName').innerHTML = dataList[i].name;
+			
+			break;
+		}
+	}
+}
