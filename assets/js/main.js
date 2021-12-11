@@ -84,3 +84,30 @@ function findMoto() {
 		}
 	}
 }
+
+function findLNTK() {
+	var data = ["Đại an", "Lưu niên", "Tốc hỷ", "Xích khẩu", "Tiểu cát", "Không vong"];
+	
+	var hour= ["Tí (23g - 1g)", "Sửu (1g - 3g)", "Dần (3g - 5g)", 
+	"Mão (5g - 7g)", "Thìn (7g - 9g)", "Tị (9g - 11g)", 
+	"Ngọ (11g - 13g)", "Mùi (13g - 15g)", "Thân (15g - 17g)", 
+	"Dậu (17g - 19g)", "Tuất (19g - 21g)", "Hợi (21g - 23g)"];
+	
+	var days = 25;
+	var month = 8;
+	var hourIndex = 6;
+	var resultMonth = parseInt(month) - parseInt(parseInt(month) / 6) * 6;
+	var resultDay = (parseInt(month) + parseInt(days) - 1) - parseInt((parseInt(month) + parseInt(days) - 1) / 6) * 6;
+	var resultAll = (parseInt(month) + parseInt(days) + parseInt(hourIndex) - 2) - parseInt((parseInt(month) + parseInt(days) + parseInt(hourIndex) - 2) / 6) * 6;
+	
+	console.log(resultMonth);
+	console.log(resultDay);
+	console.log(resultAll);
+	
+	console.log(data[parseInt(resultMonth)-1]);
+	console.log(data[parseInt(resultDay)-1]);
+	console.log(data[parseInt(resultAll)-1]);
+
+}
+
+findLNTK();
