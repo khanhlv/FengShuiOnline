@@ -85,29 +85,104 @@ function findMoto() {
 	}
 }
 
+function defaultSelected() {
+	
+	var dateCurrent = new Date();
+	document.getElementById('ddlThang').value = dateCurrent.getMonth() + 1;
+	document.getElementById('ddlNgay').value = dateCurrent.getDate();
+	
+	var hour = [
+		{
+			from:"23", 
+			to: "1", 
+			name: "Tí (23g - 1g)"
+		},
+		{
+			from:"1", 
+			to: "3", 
+			name: "Sửu (1g - 3g)"
+		},
+		{
+			from:"3", 
+			to: "5", 
+			name: "Dần (3g - 5g)"
+		},
+		{
+			from:"5", 
+			to: "7", 
+			name: "Mão (5g - 7g)"
+		},
+		{
+			from:"7", 
+			to: "9", 
+			name: "Thìn (7g - 9g)"
+		},
+		{
+			from:"9", 
+			to: "11", 
+			name: "Tị (9g - 11g)"
+		},
+		{
+			from:"11", 
+			to: "13", 
+			name: "Ngọ (11g - 13g)"
+		},
+		{
+			from:"13", 
+			to: "15", 
+			name: "Mùi (13g - 15g)"
+		},
+		{
+			from:"15", 
+			to: "17", 
+			name: "Thân (15g - 17g)"
+		},
+		{
+			from:"17", 
+			to: "19", 
+			name: "Dậu (17g - 19g)"
+		},
+		{
+			from:"19", 
+			to: "21", 
+			name: "Tuất (19g - 21g)"
+		},
+		{
+			from:"21", 
+			to: "23", 
+			name: "Hợi (21g - 23g)"
+		}
+	];
+	
+	var index;
+	for (var i = 0; i < hour.length; i++) {
+		var dataL = hour[i];
+		
+		if (parseInt(dataL.from) >= dateCurrent.getHours() && dateCurrent.getHours() < parseInt(dataL.to)) {
+			index = i + 1;
+			document.getElementById('ddlGio').value = index;
+			break;
+		}
+	}
+}
+
 function findLNTK() {
+	
 	var data = ["Đại an", "Lưu niên", "Tốc hỷ", "Xích khẩu", "Tiểu cát", "Không vong"];
-	
-	var hour= ["Tí (23g - 1g)", "Sửu (1g - 3g)", "Dần (3g - 5g)", 
-	"Mão (5g - 7g)", "Thìn (7g - 9g)", "Tị (9g - 11g)", 
-	"Ngọ (11g - 13g)", "Mùi (13g - 15g)", "Thân (15g - 17g)", 
-	"Dậu (17g - 19g)", "Tuất (19g - 21g)", "Hợi (21g - 23g)"];
-	
-	var days = 25;
-	var month = 8;
-	var hourIndex = 6;
+
+	var days = document.getElementById('ddlNgay').value;
+	var month = document.getElementById('ddlThang').value;
+	var hourIndex = document.getElementById('ddlGio').value;
 	var resultMonth = parseInt(month) - parseInt(parseInt(month) / 6) * 6;
 	var resultDay = (parseInt(month) + parseInt(days) - 1) - parseInt((parseInt(month) + parseInt(days) - 1) / 6) * 6;
 	var resultAll = (parseInt(month) + parseInt(days) + parseInt(hourIndex) - 2) - parseInt((parseInt(month) + parseInt(days) + parseInt(hourIndex) - 2) / 6) * 6;
 	
-	console.log(resultMonth);
+	console.log(month, resultMonth);
 	console.log(resultDay);
 	console.log(resultAll);
 	
-	console.log(data[parseInt(resultMonth)-1]);
-	console.log(data[parseInt(resultDay)-1]);
-	console.log(data[parseInt(resultAll)-1]);
+	console.log('Tháng:' + data[parseInt(resultMonth) == 0 ? 0 : parseInt(resultMonth) -1]);
+	console.log('Ngày:' + data[parseInt(resultDay) == 0 ? 0 : parseInt(resultDay) -1]);
+	console.log('Giờ:' +data[parseInt(resultAll) == 0 ? 0 : parseInt(resultAll) -1]);
 
 }
-
-findLNTK();

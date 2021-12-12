@@ -7,7 +7,7 @@
 	<link rel="dns-prefetch" href="//www.googletagservices.com" />
 	<link rel="dns-prefetch" href="//www.googletagmanager.com" />
 	<link rel="dns-prefetch" href="//www.google-analytics.com" />
-	<link rel="canonical" href="https://phongthuy.codethoi.com/" />
+	<link rel="canonical" href="https://phongthuy.codethoi.com/xem-ngay-gio-dep-theo-luc-nham-thoi-khoa.html" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<meta name="description" content="Khổng Minh là tự của Gia Cát Lượng, một nhà quân sư nổi tiếng sống ở nhà Thục Hán, thời Tam Quốc. Ông có tài tính toán như thần, dự đoán được những điều sắp xảy ra, thông tỏ lý lẽ huyền vi ở trong càn khôn vũ trụ. Gia Cát Lượng thường ứng dụng Kỳ môn độn giáp, Thiên văn...vào trong hoạt động quân sự và chính trị của mình. Một trong những bộ môn nổi tiếng không kém của ông đó chính là Lục Diệu.">
 	<meta NAME="keywords" CONTENT="Khổng Minh là tự của Gia Cát Lượng, một nhà quân sư nổi tiếng sống ở nhà Thục Hán, thời Tam Quốc. Ông có tài tính toán như thần, dự đoán được những điều sắp xảy ra, thông tỏ lý lẽ huyền vi ở trong càn khôn vũ trụ.">
@@ -18,7 +18,8 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="https://codethoi.com/favicon-16x16.png">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<script src="assets/js/bootstrap.bundle.min.js"></script>
-	<script src="assets/js/main.js"></script> 
+	<script src="assets/js/main.js"></script>
+	
 	<style>
 		.bd-footer {
 			font-size: .875rem;
@@ -80,7 +81,7 @@
 									<option value="8">8</option>
 									<option value="9">9</option>
 									<option value="10">10</option>
-									<option selected="selected" value="11">11</option>
+									<option value="11">11</option>
 									<option value="12">12</option>
 									<option value="13">13</option>
 									<option value="14">14</option>
@@ -115,21 +116,9 @@
 									<option value="9">9</option>
 									<option value="10">10</option>
 									<option value="11">11</option>
-									<option selected="selected" value="12">12</option>
+									<option value="12">12</option>
 								</select>
-								&nbsp;<label for="ddlNam">Năm: </label>
-								<select name="ddlNam" id="ddlNam">
-									<option value="2016">2016</option>
-									<option value="2017">2017</option>
-									<option value="2018">2018</option>
-									<option value="2019">2019</option>
-									<option value="2020">2020</option>
-									<option selected="selected" value="2021">2021</option>
-									<option value="2022">2022</option>
-								</select>
-							</div>
-							<div class="row-input clearfix">
-								<label for="ddlGio">Giờ: </label>
+								&nbsp;<label for="ddlGio">Giờ: </label>
 								<select name="ddlGio" id="ddlGio">
 									<option value="1">Tí (23g - 1g)</option>
 									<option value="2">Sửu (1g - 3g)</option>
@@ -137,7 +126,7 @@
 									<option value="4">Mão (5g - 7g)</option>
 									<option value="5">Thìn (7g - 9g)</option>
 									<option value="6">Tị (9g - 11g)</option>
-									<option selected="selected" value="7">Ngọ (11g - 13g)</option>
+									<option value="7">Ngọ (11g - 13g)</option>
 									<option value="8">Mùi (13g - 15g)</option>
 									<option value="9">Thân (15g - 17g)</option>
 									<option value="10">Dậu (17g - 19g)</option>
@@ -145,11 +134,12 @@
 									<option value="12">Hợi (21g - 23g)</option>
 								</select>
 							</div>
+							
 						</div>
 
 					</div>
 					<div class="form-group">
-						<input type="button" value="Tra cứu" style="width: 120px;background-color: #F0431E;border-color: #F0431E;" onclick="findMoto()" class="btn btn-primary"/>
+						<input type="button" value="Tra cứu" style="width: 120px;background-color: #F0431E;border-color: #F0431E;" onclick="findLNTK()" class="btn btn-primary"/>
 					</div>
 					<div class="form-group">
 						<p style="font-weight: bold;font-size: 17px;">Số xe: <span id="phoneNumber" style="color:red">N/A</span> - Quẻ số: <span id="numberCalc" style="color:red">N/A</span></p>
@@ -281,5 +271,9 @@
 		<p class="mb-0">© 2020 CodeThoi</p>
 	  </div>
 	</footer>
+	
+	<script>
+		defaultSelected();
+	</script>
 </body>
 </html>
