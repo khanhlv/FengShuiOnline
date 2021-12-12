@@ -168,8 +168,27 @@ function defaultSelected() {
 
 function findLNTK() {
 	
-	var data = ["Đại an", "Lưu niên", "Tốc hỷ", "Xích khẩu", "Tiểu cát", "Không vong"];
+	var data = [{
+		name: "Đại an",
+		desc: "Bền vững, yên ổn, kéo dài, gia đình êm ấm, khỏe mạnh, cuộc sống vui vẻ, hạnh phúc và phát triển"
+	}, {
+		name: "Lưu niên", 
+		desc: "Lưu giữ lại, kéo lại; Niên có nghĩa là năm, chỉ thời gian"
+	}, {
+		name: "Tốc hỷ",
+		desc: "Nhanh chóng, hỷ nghĩa là niềm vui, cát lợi hanh thông"
+	}, {
+		name:"Xích khẩu",
+		desc: "Xích nghĩa hán văn là đỏ, khẩu nghĩa là miệng"
+	}, {
+		name:"Tiểu cát",
+		desc: "Tiểu Cát có nghĩa là điều may mắn, điều cát lợi nhỏ"
+	}, {
+		name:"Không vong",
+		desc: "Không có nghĩa là hư không, trống rỗng. Vong có nghĩa là không tồn tại, đã mất"
+	}];
 
+	var dataMap = []
 	var days = document.getElementById('ddlNgay').value;
 	var month = document.getElementById('ddlThang').value;
 	var hourIndex = document.getElementById('ddlGio').value;
@@ -181,8 +200,21 @@ function findLNTK() {
 	console.log(resultDay);
 	console.log(resultAll);
 	
-	console.log('Tháng:' + data[parseInt(resultMonth) == 0 ? 0 : parseInt(resultMonth) -1]);
-	console.log('Ngày:' + data[parseInt(resultDay) == 0 ? 0 : parseInt(resultDay) -1]);
-	console.log('Giờ:' +data[parseInt(resultAll) == 0 ? 0 : parseInt(resultAll) -1]);
+	var dataDay = data[parseInt(resultDay) == 0 ? 5 : parseInt(resultDay) -1];
+	var dataMonth = data[parseInt(resultMonth) == 0 ? 5 : parseInt(resultMonth) -1];
+	var dataAll = data[parseInt(resultAll) == 0 ? 5 : parseInt(resultAll) -1];
+	
+	document.getElementById('resultDay').innerHTML = dataDay.name;
+	document.getElementById('resultMonth').innerHTML = dataMonth.name;
+	document.getElementById('resultHours').innerHTML = dataAll.name;
+	
+	document.getElementById('resultDesc').innerHTML = dataAll.desc;
+	
+	
+	console.log('Tháng:' + data[parseInt(resultMonth) == 0 ? 5 : parseInt(resultMonth) -1]);
+	console.log('Ngày:' + data[parseInt(resultDay) == 0 ? 5 : parseInt(resultDay) -1]);
+	console.log('Giờ:' +data[parseInt(resultAll) == 0 ? 5 : parseInt(resultAll) -1]);
+	
+	
 
 }
