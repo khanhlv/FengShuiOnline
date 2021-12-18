@@ -18,6 +18,7 @@
 	<link rel="icon" type="image/png" sizes="16x16" href="https://codethoi.com/favicon-16x16.png">
 	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	<script src="assets/js/bootstrap.bundle.min.js"></script>
+	<script src="assets/js/amlich-hnd.js"></script>
 	<script src="assets/js/main.js"></script>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-DMKYRVD9LZ"></script>
@@ -74,12 +75,12 @@
 		<div class="row">
 			<div class="col-md-6 offset-md-3" style="text-align: center;">
 				<div style="margin-bottom: 20px;padding: 15px;border: 1px solid rgb(204, 204, 204); border-radius: 15px; box-shadow: rgba(0, 0, 0, 0.075) 0px 0.125rem 1.25rem !important; height: auto !important;">
-					
 					<div class="form-group" style="margin-top: 25px">
+						<p style="color: #666;font-style: italic;font-weight: normal;">Lưu ý: Thông tin nhập vào bên dưới là ngày, tháng, năm Dương Lịch</p>
 						<div class="nhap_thongtin text-center">
 							<div class="row-input clearfix">
 								<label for="ddlNgay">Ngày: </label>
-								<select name="ddlNgay" id="ddlNgay">
+								<select name="ddlNgay" id="ddlNgay" onchange="lunarDate()">
 									<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -113,7 +114,7 @@
 									<option value="31">31</option>
 								</select>
 								&nbsp;<label for="ddlThang">Tháng: </label>
-								<select name="ddlThang" id="ddlThang">
+								<select name="ddlThang" id="ddlThang" onchange="lunarDate()">
 									<option value="1">1</option>
 									<option value="2">2</option>
 									<option value="3">3</option>
@@ -143,10 +144,10 @@
 									<option value="12">Hợi (21g - 23g)</option>
 								</select>
 							</div>
-							
 						</div>
-
+						<p style="font-style: italic;"><b>Âm lịch:</b> Ngày <span id="amlichNgay"></span> tháng <span id="amlichThang"></span> năm <span id="amlichNam"></span></p>
 					</div>
+					<p style="display: none;font-style: italic;"><a href="javascript:;" onclick="convertLunarDate()">Chuyển đổi sang Âm lịch</a></p>
 					<div class="form-group">
 						<input type="button" value="Tra cứu" style="width: 120px;background-color: #F0431E;border-color: #F0431E;" onclick="findLNTK()" class="btn btn-primary"/>
 					</div>
@@ -284,6 +285,8 @@
 	
 	<script>
 		defaultSelected();
+		lunarDate();
+		findLNTK();
 	</script>
 </body>
 </html>

@@ -214,7 +214,27 @@ function findLNTK() {
 	console.log('Tháng:' + data[parseInt(resultMonth) == 0 ? 5 : parseInt(resultMonth) -1]);
 	console.log('Ngày:' + data[parseInt(resultDay) == 0 ? 5 : parseInt(resultDay) -1]);
 	console.log('Giờ:' +data[parseInt(resultAll) == 0 ? 5 : parseInt(resultAll) -1]);
-	
-	
+}
 
+function convertLunarDate() {
+	var today = new Date();
+	var month = document.getElementById('ddlThang').value;
+	var days = document.getElementById('ddlNgay').value;
+	
+	var data = getLunarDate(parseInt(days), parseInt(month), today.getFullYear());
+	
+	document.getElementById('ddlNgay').value = data.day;
+	document.getElementById('ddlThang').value = data.month;
+}
+
+function lunarDate() {
+	var today = new Date();
+	var month = document.getElementById('ddlThang').value;
+	var days = document.getElementById('ddlNgay').value;
+	
+	var data = getLunarDate(parseInt(days), parseInt(month), today.getFullYear());
+	
+	document.getElementById('amlichNgay').innerHTML = data.day;
+	document.getElementById('amlichThang').innerHTML = data.month;
+	document.getElementById('amlichNam').innerHTML = today.getFullYear();
 }
